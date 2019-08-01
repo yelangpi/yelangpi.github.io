@@ -259,6 +259,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/python学习笔记3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="野狼匹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="野狼匹的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/01/python学习笔记3/" itemprop="url">python学习笔记3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T12:00:00+08:00">
+                2019-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h2 id="urllib库"><a href="#urllib库" class="headerlink" title="urllib库"></a>urllib库</h2><h3 id="request模块"><a href="#request模块" class="headerlink" title="request模块"></a>request模块</h3><h4 id="BaseHandler类"><a href="#BaseHandler类" class="headerlink" title="BaseHandler类"></a>BaseHandler类</h4><p>Handler的父类，基本函数有default_open(),protocol_request()</p>
+<h4 id="Hander子类"><a href="#Hander子类" class="headerlink" title="Hander子类"></a>Hander子类</h4><h5 id="HTTPDefaultErrorHandler"><a href="#HTTPDefaultErrorHandler" class="headerlink" title="HTTPDefaultErrorHandler"></a>HTTPDefaultErrorHandler</h5><p>用于处理HTTP响应错误</p>
+<h5 id="HTTPRedirectHandler"><a href="#HTTPRedirectHandler" class="headerlink" title="HTTPRedirectHandler"></a>HTTPRedirectHandler</h5><p>用于处理重定向</p>
+<h5 id="HTTPCookieProcessor"><a href="#HTTPCookieProcessor" class="headerlink" title="HTTPCookieProcessor"></a>HTTPCookieProcessor</h5><p>用于处理cookies:</p>
+<h6 id="字典处理"><a href="#字典处理" class="headerlink" title="字典处理"></a>字典处理</h6><p>使用http.cookiejar.CookieJar()创建cookie</p>
+<p>使用HTTPCookieProcessor创建handle并传入cookie</p>
+<p>build_opener()创建opener并open()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">cookie = http.cookiejar.CookieJar()</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    print(item.name+<span class="string">'='</span>+item.value)</span><br></pre></td></tr></table></figure>
+
+<h6 id="保存cookie"><a href="#保存cookie" class="headerlink" title="保存cookie"></a>保存cookie</h6><p>使用MozillaCookieJar(filename)或LWPCookieJar(filename)创建cookie</p>
+<p>使用cookie.save(ignore_expires=True, ignore_discard=True)保存文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">filename = <span class="string">'cookies.txt'</span></span><br><span class="line">cookie = http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line"><span class="comment"># Mozilla格式或LWP格式</span></span><br><span class="line"><span class="comment"># cookie = http.cookiejar.LWPCookieJar(filename)</span></span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line">cookie.save(ignore_expires=<span class="literal">True</span>, ignore_discard=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="读取cookie"><a href="#读取cookie" class="headerlink" title="读取cookie"></a>读取cookie</h6><p>使用cookie.load(filename, ignore_discard=True, ignore_expires=True)读取cookie文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">filename = <span class="string">'cookies.txt'</span></span><br><span class="line">cookie = http.cookiejar.MozillaCookieJar()</span><br><span class="line"><span class="comment"># Mozilla格式或LWP格式</span></span><br><span class="line"><span class="comment"># cookie = http.cookiejar.LWPCookieJar()</span></span><br><span class="line">cookie.load(filename, ignore_discard=<span class="literal">True</span>, ignore_expires=<span class="literal">True</span>)</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+<h5 id="ProxyHandler"><a href="#ProxyHandler" class="headerlink" title="ProxyHandler"></a>ProxyHandler</h5><p>设置代理</p>
+<p>使用ProxyHandler，传入参数为字典</p>
+<p>使用build_opener(handler)构建opener</p>
+<p>使用open()函数打开</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> ProxyHandler, build_opener</span><br><span class="line">proxy_handler = ProxyHandler(&#123;</span><br><span class="line">    <span class="string">'http'</span>: <span class="string">'http://127.0.0.1:8080'</span>,</span><br><span class="line">    <span class="string">'https'</span>: <span class="string">'https://127.0.0.1:8080'</span></span><br><span class="line">&#125;</span><br><span class="line">)  <span class="comment"># 地址自己设置</span></span><br><span class="line">opener = build_opener(proxy_handler)</span><br><span class="line">response = opener.open(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+
+<h5 id="HTTPPasswordMgr"><a href="#HTTPPasswordMgr" class="headerlink" title="HTTPPasswordMgr"></a>HTTPPasswordMgr</h5><p>用于管理密码</p>
+<h5 id="HTTPBasicAuthHandler"><a href="#HTTPBasicAuthHandler" class="headerlink" title="HTTPBasicAuthHandler"></a>HTTPBasicAuthHandler</h5><p>用于管理认证:</p>
+<p>构建HTTPPasswordMgrWithDefaultRealm对象p</p>
+<p>使用add_password加入账号密码和url</p>
+<p>构建HTTPBasicAuthHandler对象时参数p</p>
+<p>使用build_opener创建opener对象</p>
+<p>使用open()函数打开</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, build_opener</span><br><span class="line">username = <span class="string">'username'</span></span><br><span class="line">password = <span class="string">'password'</span></span><br><span class="line">url = <span class="string">'http://www.baidu.com/'</span>   <span class="comment"># 使用需要身份验证的页面</span></span><br><span class="line">p = HTTPPasswordMgrWithDefaultRealm()</span><br><span class="line">p.add_password(<span class="literal">None</span>, url, username, password)</span><br><span class="line">handler = HTTPBasicAuthHandler(p)</span><br><span class="line">opener = build_opener(handler)</span><br><span class="line">result = opener.open(url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="error模块"><a href="#error模块" class="headerlink" title="error模块"></a>error模块</h3><h4 id="URLError类"><a href="#URLError类" class="headerlink" title="URLError类"></a>URLError类</h4><p>继承自OSError类，是error模块的基类</p>
+<p>具有reason属性表示异常内容</p>
+<h4 id="HTTPError类"><a href="#HTTPError类" class="headerlink" title="HTTPError类"></a>HTTPError类</h4><p>URLError的子类，专门用来处理HTTP请求错误</p>
+<p>属性:</p>
+<ul>
+<li>code: 返回HTTP状态码，404表示网页不存在，500表示服务器内部错误</li>
+<li>reason: 返回错误原因</li>
+<li>headers: 返回请求头</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request, error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = request.urlopen(<span class="string">'https://yelangpi.github.io/index.htm'</span>)  <span class="comment"># 不存在的网站</span></span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason, e.code, e.headers, sep=<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>reason属性可能是一个对象而不是字符串，例如socket.timeout类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = urllib.request.urlopen(<span class="string">'https://www.baidu.com'</span>, timeout=<span class="number">0.01</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(type(e.reason))</span><br><span class="line">    <span class="keyword">if</span> isinstance(e.reason, socket.timeout):</span><br><span class="line">        print(<span class="string">'TIME OUT'</span>)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/test2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1465,7 +1653,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
