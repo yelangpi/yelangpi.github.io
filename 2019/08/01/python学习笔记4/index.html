@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,笔记,">
+  <meta name="keywords" content="笔记,python,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
-<meta name="keywords" content="python,笔记">
+<meta name="keywords" content="笔记,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记4">
 <meta property="og:url" content="http://yoursite.com/2019/08/01/python学习笔记4/index.html">
@@ -88,7 +88,7 @@
 <meta property="og:description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/08/01/python学习笔记4/read().png">
-<meta property="og:updated_time" content="2019-08-01T13:55:09.334Z">
+<meta property="og:updated_time" content="2019-08-01T14:01:48.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记4">
 <meta name="twitter:description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
@@ -424,6 +424,8 @@
 <li><p>parse():解析robots文件</p>
 <p>urlopen()+parse()方法+伪装浏览器方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">rp = RobotFileParser()</span><br><span class="line">headers = &#123;&amp;<span class="comment">#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0&amp;#39;&#125;</span></span><br><span class="line">req = urllib.request.Request(url=&amp;<span class="comment">#39;http://www.jianshu.com/robots.txt&amp;#39;, headers=headers)</span></span><br><span class="line">rp.parse(urlopen(req).read().decode(&amp;<span class="comment">#39;utf-8&amp;#39;).splitlines())</span></span><br></pre></td></tr></table></figure>
+
+<p>主要方便之处如果产生错误直接抛出，自己可以手动解决。</p>
 </li>
 <li><p>can_fetch(): 传入User-agent 和URL，返回是否可抓取</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(rp.can_fetch(<span class="string">'*'</span>, <span class="string">'http://www.jianshu.com/p/a4be10076a6e'</span>))print(rp.can_fetch(<span class="string">'*'</span>, <span class="string">'http://www.jianshu.com/search?q=python&amp;page=1&amp;typr=collections'</span>))</span><br></pre></td></tr></table></figure>
@@ -452,9 +454,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
