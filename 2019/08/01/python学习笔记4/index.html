@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="笔记,python,">
+  <meta name="keywords" content="python,笔记,">
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
-<meta name="keywords" content="笔记,python">
+<meta name="description" content="¶urllib库 ¶parse模块 ¶urlparse() url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;) 结果: 12&amp;lt;class">
+<meta name="keywords" content="python,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记4">
 <meta property="og:url" content="http://yoursite.com/2019/08/01/python学习笔记4/index.html">
 <meta property="og:site_name" content="野狼匹的博客">
-<meta property="og:description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
+<meta property="og:description" content="¶urllib库 ¶parse模块 ¶urlparse() url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;) 结果: 12&amp;lt;class">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/08/01/python学习笔记4/read().png">
 <meta property="og:updated_time" content="2019-08-01T14:01:48.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记4">
-<meta name="twitter:description" content="urllib库parse模块urlparse()url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;)  结果: 12&amp;lt;class &apos;url">
+<meta name="twitter:description" content="¶urllib库 ¶parse模块 ¶urlparse() url解析 代码: 123from urllib.parse import urlparseresult = urlparse(&apos;https://www.baidu.com/index.html;user?id=5#comment&apos;)print(type(result), result, sep=&apos;\n&apos;) 结果: 12&amp;lt;class">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/01/python学习笔记4/read().png">
 
 
@@ -359,13 +359,14 @@
       
 
       
-        <h2 id="urllib库"><a href="#urllib库" class="headerlink" title="urllib库"></a>urllib库</h2><h3 id="parse模块"><a href="#parse模块" class="headerlink" title="parse模块"></a>parse模块</h3><h4 id="urlparse"><a href="#urlparse" class="headerlink" title="urlparse()"></a>urlparse()</h4><p>url解析</p>
+        <h2 id="urllib库"><a class="header-anchor" href="#urllib库">¶</a>urllib库</h2>
+<h3 id="parse模块"><a class="header-anchor" href="#parse模块">¶</a>parse模块</h3>
+<h4 id="urlparse"><a class="header-anchor" href="#urlparse">¶</a>urlparse()</h4>
+<p>url解析</p>
 <p>代码:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line">result = urlparse(<span class="string">'https://www.baidu.com/index.html;user?id=5#comment'</span>)</span><br><span class="line">print(type(result), result, sep=<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
-
 <p>结果:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">urllib</span>.<span class="title">parse</span>.<span class="title">ParseResult</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">ParseResult</span><span class="params">(scheme=<span class="string">'https'</span>, netloc=<span class="string">'www.baidu.com'</span>, path=<span class="string">'/index.html'</span>, params=<span class="string">'user'</span>, query=<span class="string">'id=5'</span>, fragment=<span class="string">'comment'</span>)</span></span></span><br></pre></td></tr></table></figure>
-
 <p>函数返回结果为ParseResult类型，包括6个部分:</p>
 <ul>
 <li>scheme: 协议(://前面)</li>
@@ -376,48 +377,51 @@
 <li>fragment: 锚点(#后面)，由于直接定位页面内部的下拉位置</li>
 </ul>
 <p>即 scheme://netloc/path;params?query#fragment</p>
-<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>urlstring: 必填项</p>
+<h5 id="参数"><a class="header-anchor" href="#参数">¶</a>参数</h5>
+<p>urlstring: 必填项</p>
 <p>scheme: 默认协议</p>
 <p>allow_fragments: 是否忽略fragment，如果是False，fragment部分会被解析为path，parameters或query的一部分。</p>
-<h4 id="urlunparse"><a href="#urlunparse" class="headerlink" title="urlunparse()"></a>urlunparse()</h4><p>完成URL构造，接受一个可迭代对象，长度必须为6.</p>
+<h4 id="urlunparse"><a class="header-anchor" href="#urlunparse">¶</a>urlunparse()</h4>
+<p>完成URL构造，接受一个可迭代对象，长度必须为6.</p>
 <p>如 <a href="http://www.baidu.com/index.html;user?a=6#comment" target="_blank" rel="noopener">http://www.baidu.com/index.html;user?a=6#comment</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlunparse</span><br><span class="line">data = [<span class="string">'http'</span>, <span class="string">'www.baidu.com'</span>, <span class="string">'index.html'</span>, <span class="string">'user'</span>, <span class="string">'a=6'</span>, <span class="string">'comment'</span>]</span><br><span class="line">print(urlunparse(data))</span><br></pre></td></tr></table></figure>
-
-<h4 id="urlsplit"><a href="#urlsplit" class="headerlink" title="urlsplit()"></a>urlsplit()</h4><p>不解析params部分</p>
+<h4 id="urlsplit"><a class="header-anchor" href="#urlsplit">¶</a>urlsplit()</h4>
+<p>不解析params部分</p>
 <p>代码:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlsplit</span><br><span class="line">result = urlsplit(<span class="string">'https://www.baidu.com/index.html;user?id=5#comment'</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-
 <p>结果</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SplitResult(scheme=<span class="string">'https'</span>, netloc=<span class="string">'www.baidu.com'</span>, path=<span class="string">'/index.html;user'</span>, query=<span class="string">'id=5'</span>, fragment=<span class="string">'comment'</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="urlunsplit"><a href="#urlunsplit" class="headerlink" title="urlunsplit()"></a>urlunsplit()</h4><p>同理，与urlunparse()，长度必须是5</p>
-<h4 id="urljoin"><a href="#urljoin" class="headerlink" title="urljoin()"></a>urljoin()</h4><p>第一个参数：base_url(基础链接)</p>
+<h4 id="urlunsplit"><a class="header-anchor" href="#urlunsplit">¶</a>urlunsplit()</h4>
+<p>同理，与urlunparse()，长度必须是5</p>
+<h4 id="urljoin"><a class="header-anchor" href="#urljoin">¶</a>urljoin()</h4>
+<p>第一个参数：base_url(基础链接)</p>
 <p>第二个参数：新的链接</p>
 <p>base_url 提供了三项内容 scheme，netloc，path，如果这三项在新的链接里不存在，就予以补全；如果存在，就使用新的链接的部分。</p>
-<h4 id="urlencode"><a href="#urlencode" class="headerlink" title="urlencode()"></a>urlencode()</h4><p>构造GET请求参数</p>
+<h4 id="urlencode"><a class="header-anchor" href="#urlencode">¶</a>urlencode()</h4>
+<p>构造GET请求参数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line">query = &#123;</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'germey'</span>,</span><br><span class="line">    <span class="string">'age'</span>: <span class="string">'12'</span></span><br><span class="line">&#125;</span><br><span class="line">base_url = <span class="string">'http://www.baidu.com?'</span></span><br><span class="line">url = base_url + urlencode(query)</span><br><span class="line">print(url)</span><br></pre></td></tr></table></figure>
-
-<p> 结果为<a href="http://www.baidu.com?name=germey&amp;age=12" target="_blank" rel="noopener">http://www.baidu.com?name=germey&amp;age=12</a></p>
-<h4 id="parse-qs"><a href="#parse-qs" class="headerlink" title="parse_qs()"></a>parse_qs()</h4><p>query转回字典</p>
+<p>结果为http://www.baidu.com?name=germey&amp;age=12</p>
+<h4 id="parse-qs"><a class="header-anchor" href="#parse-qs">¶</a>parse_qs()</h4>
+<p>query转回字典</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qs</span><br><span class="line">query = <span class="string">'name=germey&amp;age=12'</span></span><br><span class="line">print(parse_qs(query))</span><br></pre></td></tr></table></figure>
-
 <p>结果为{‘name’: [‘germey’], ‘age’: [‘12’]}</p>
-<h4 id="parse-qsl"><a href="#parse-qsl" class="headerlink" title="parse_qsl()"></a>parse_qsl()</h4><p>另一种方法，转换为元组</p>
+<h4 id="parse-qsl"><a class="header-anchor" href="#parse-qsl">¶</a>parse_qsl()</h4>
+<p>另一种方法，转换为元组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> parse_qsl</span><br><span class="line">query = <span class="string">'name=germey&amp;age=12'</span></span><br><span class="line">print(parse_qsl(query))</span><br></pre></td></tr></table></figure>
-
 <p>结果为[(‘name’, ‘germey’), (‘age’, ‘12’)]</p>
-<h4 id="quote"><a href="#quote" class="headerlink" title="quote()"></a>quote()</h4><p>中文参数转化为URL编码</p>
+<h4 id="quote"><a class="header-anchor" href="#quote">¶</a>quote()</h4>
+<p>中文参数转化为URL编码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</span><br><span class="line">keyword = <span class="string">'野狼匹'</span></span><br><span class="line">url = <span class="string">'https://www.baidu.com/s?wd='</span> + quote(keyword)</span><br><span class="line">print(url)</span><br></pre></td></tr></table></figure>
-
-<p>结果为<a href="https://www.baidu.com/s?wd=%E9%87%8E%E7%8B%BC%E5%8C%B9" target="_blank" rel="noopener">https://www.baidu.com/s?wd=%E9%87%8E%E7%8B%BC%E5%8C%B9</a></p>
-<h4 id="unquote"><a href="#unquote" class="headerlink" title="unquote()"></a>unquote()</h4><p>URL编码转换为中文</p>
+<p>结果为https://www.baidu.com/s?wd=%E9%87%8E%E7%8B%BC%E5%8C%B9</p>
+<h4 id="unquote"><a class="header-anchor" href="#unquote">¶</a>unquote()</h4>
+<p>URL编码转换为中文</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line">print(unquote(<span class="string">'https://www.baidu.com/s?wd=%E9%87%8E%E7%8B%BC%E5%8C%B9'</span>))</span><br></pre></td></tr></table></figure>
-
-<p>结果为<a href="https://www.baidu.com/s?wd=野狼匹" target="_blank" rel="noopener">https://www.baidu.com/s?wd=野狼匹</a></p>
-<h3 id="robotparser模块"><a href="#robotparser模块" class="headerlink" title="robotparser模块"></a>robotparser模块</h3><p>首先创建一个RobotFileParser对象</p>
+<p>结果为https://www.baidu.com/s?wd=野狼匹</p>
+<h3 id="robotparser模块"><a class="header-anchor" href="#robotparser模块">¶</a>robotparser模块</h3>
+<p>首先创建一个RobotFileParser对象</p>
 <p><code>rp = RobotFileParser()</code></p>
 <p>创建时可传入链接，如</p>
-<p><code>rp = RobotFileParser(&#39;http://www.jianshu.com/robots.txt&#39;)</code></p>
+<p><code>rp = RobotFileParser('http://www.jianshu.com/robots.txt')</code></p>
 <p>几个函数的应用</p>
 <ul>
 <li>set_url(): 创建时未传入链接，可以使用这个函数设置robots.txt文件</li>
@@ -426,20 +430,22 @@
 <p><img src="/2019/08/01/python学习笔记4/read().png" alt="read()"></p>
 <p>可以直接查看源代码，read()其实就是urlopen()+parse(),但是read()函数有一个坏处，当你打开错误时，只会全部允许或者全不允许，于是我入坑了，简书的robots文件必须伪造成浏览器才能打开，结果是导致403而不知道，结果所有网站都是False，建议直接自行使用urlopen()+parse()。</p>
 <ul>
-<li><p>parse():解析robots文件</p>
+<li>
+<p>parse():解析robots文件</p>
 <p>urlopen()+parse()方法+伪装浏览器方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.robotparser <span class="keyword">import</span> RobotFileParser</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">rp = RobotFileParser()</span><br><span class="line">headers = &#123;&amp;<span class="comment">#39;User-Agent&amp;#39;: &amp;#39;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0&amp;#39;&#125;</span></span><br><span class="line">req = urllib.request.Request(url=&amp;<span class="comment">#39;http://www.jianshu.com/robots.txt&amp;#39;, headers=headers)</span></span><br><span class="line">rp.parse(urlopen(req).read().decode(&amp;<span class="comment">#39;utf-8&amp;#39;).splitlines())</span></span><br></pre></td></tr></table></figure>
-
 <p>主要方便之处如果产生错误直接抛出，自己可以手动解决。</p>
 </li>
-<li><p>can_fetch(): 传入User-agent 和URL，返回是否可抓取</p>
+<li>
+<p>can_fetch(): 传入User-agent 和URL，返回是否可抓取</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(rp.can_fetch(<span class="string">'*'</span>, <span class="string">'http://www.jianshu.com/p/a4be10076a6e'</span>))print(rp.can_fetch(<span class="string">'*'</span>, <span class="string">'http://www.jianshu.com/search?q=python&amp;page=1&amp;typr=collections'</span>))</span><br></pre></td></tr></table></figure>
-
 <p>结果是True和False</p>
 </li>
-<li><p>mtime(): 返回上次抓取和分析robots.txt的时间</p>
+<li>
+<p>mtime(): 返回上次抓取和分析robots.txt的时间</p>
 </li>
-<li><p>modified():将当前时间设置为上次抓取和分析robots.txt的时间</p>
+<li>
+<p>modified():将当前时间设置为上次抓取和分析robots.txt的时间</p>
 </li>
 </ul>
 
@@ -459,9 +465,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
             <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -646,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib库"><span class="nav-number">1.</span> <span class="nav-text">urllib库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#parse模块"><span class="nav-number">1.1.</span> <span class="nav-text">parse模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#urlparse"><span class="nav-number">1.1.1.</span> <span class="nav-text">urlparse()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlunparse"><span class="nav-number">1.1.2.</span> <span class="nav-text">urlunparse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlsplit"><span class="nav-number">1.1.3.</span> <span class="nav-text">urlsplit()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlunsplit"><span class="nav-number">1.1.4.</span> <span class="nav-text">urlunsplit()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urljoin"><span class="nav-number">1.1.5.</span> <span class="nav-text">urljoin()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlencode"><span class="nav-number">1.1.6.</span> <span class="nav-text">urlencode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parse-qs"><span class="nav-number">1.1.7.</span> <span class="nav-text">parse_qs()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parse-qsl"><span class="nav-number">1.1.8.</span> <span class="nav-text">parse_qsl()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quote"><span class="nav-number">1.1.9.</span> <span class="nav-text">quote()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unquote"><span class="nav-number">1.1.10.</span> <span class="nav-text">unquote()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#robotparser模块"><span class="nav-number">1.2.</span> <span class="nav-text">robotparser模块</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib库"><span class="nav-number">1.</span> <span class="nav-text">¶urllib库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#parse模块"><span class="nav-number">1.1.</span> <span class="nav-text">¶parse模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#urlparse"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶urlparse()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶参数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlunparse"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶urlunparse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlsplit"><span class="nav-number">1.1.3.</span> <span class="nav-text">¶urlsplit()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlunsplit"><span class="nav-number">1.1.4.</span> <span class="nav-text">¶urlunsplit()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urljoin"><span class="nav-number">1.1.5.</span> <span class="nav-text">¶urljoin()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urlencode"><span class="nav-number">1.1.6.</span> <span class="nav-text">¶urlencode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parse-qs"><span class="nav-number">1.1.7.</span> <span class="nav-text">¶parse_qs()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parse-qsl"><span class="nav-number">1.1.8.</span> <span class="nav-text">¶parse_qsl()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quote"><span class="nav-number">1.1.9.</span> <span class="nav-text">¶quote()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unquote"><span class="nav-number">1.1.10.</span> <span class="nav-text">¶unquote()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#robotparser模块"><span class="nav-number">1.2.</span> <span class="nav-text">¶robotparser模块</span></a></li></ol></li></ol></div>
             
 
           </div>
