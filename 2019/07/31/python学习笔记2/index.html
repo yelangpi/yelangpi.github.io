@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="urllibk库 request模块 urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为字节流">
+<meta name="description" content="¶urllibk库 ¶request模块 ¶urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为">
 <meta name="keywords" content="笔记,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记2">
 <meta property="og:url" content="http://yoursite.com/2019/07/31/python学习笔记2/index.html">
 <meta property="og:site_name" content="野狼匹的博客">
-<meta property="og:description" content="urllibk库 request模块 urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为字节流">
+<meta property="og:description" content="¶urllibk库 ¶request模块 ¶urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-07-31T12:06:16.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记2">
-<meta name="twitter:description" content="urllibk库 request模块 urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为字节流">
+<meta name="twitter:description" content="¶urllibk库 ¶request模块 ¶urlopen() Api: 1urlopen(url, data=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=None, capath=None, cadefault=False, context=None)   url:字符串url或Request类   data:字典类需要转码为">
 
 
 
@@ -357,9 +357,9 @@
       
 
       
-        <h2><span id="urllibk库">urllibk库</span></h2>
-<h3><span id="request模块">request模块</span></h3>
-<h4><span id="urlopen">urlopen()</span></h4>
+        <h2 id="urllibk库"><a class="header-anchor" href="#urllibk库">¶</a>urllibk库</h2>
+<h3 id="request模块"><a class="header-anchor" href="#request模块">¶</a>request模块</h3>
+<h4 id="urlopen"><a class="header-anchor" href="#urlopen">¶</a>urlopen()</h4>
 <p><strong>Api:</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urlopen(url, data=<span class="literal">None</span>, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,  *, cafile=<span class="literal">None</span>, capath=<span class="literal">None</span>, cadefault=<span class="literal">False</span>, context=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <ol>
@@ -388,7 +388,7 @@
 <p>context:ssl.SSLContext类型，指定SSL设置，实现SSL加密传输。</p>
 </li>
 </ol>
-<h4><span id="request类">Request类</span></h4>
+<h4 id="request类"><a class="header-anchor" href="#request类">¶</a>Request类</h4>
 <p><strong>urllib.request.Request</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Request:</span><br><span class="line"></span><br><span class="line">    def __init__(self, url, data=None, headers=&#123;&#125;,</span><br><span class="line">                 origin_req_host=None, unverifiable=False,</span><br><span class="line">                 method=None):</span><br></pre></td></tr></table></figure>
 <ol>
@@ -443,18 +443,18 @@
 <li>unverifiable:这个请求是否无法验证，默认False</li>
 <li>method:字符串，指定请求使用的方法，比如GET,POST,PUT。</li>
 </ol>
-<h3><span id="httpresponse">HTTPResponse</span></h3>
-<h4><span id="urlopen返回类型">urlopen()返回类型</span></h4>
+<h3 id="httpresponse"><a class="header-anchor" href="#httpresponse">¶</a>HTTPResponse</h3>
+<h4 id="urlopen-返回类型"><a class="header-anchor" href="#urlopen-返回类型">¶</a>urlopen()返回类型</h4>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">response = urllib.request.urlopen(<span class="string">'http://www.baidu.com'</span>)</span><br><span class="line">print(type(response))</span><br></pre></td></tr></table></figure>
 <p>输出结果：&lt;class ‘http.client.HTTPResponse’&gt;</p>
-<h4><span id="使用函数">使用函数</span></h4>
+<h4 id="使用函数"><a class="header-anchor" href="#使用函数">¶</a>使用函数</h4>
 <p>read() 返回的网页内容</p>
 <p><code>print(response.read().decode('utf-8'))</code></p>
 <p>readinto()</p>
 <p>getheader(name)</p>
 <p>getheaders()</p>
 <p>fileno()</p>
-<h4><span id="属性">属性</span></h4>
+<h4 id="属性"><a class="header-anchor" href="#属性">¶</a>属性</h4>
 <p>msg</p>
 <p>version</p>
 <p>status 200表示成功，404表示网页未找到</p>
@@ -665,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">urllibk库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">request模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.1.</span> <span class="nav-text">urlopen()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.</span> <span class="nav-text">Request类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">HTTPResponse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.1.</span> <span class="nav-text">urlopen()返回类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.3.</span> <span class="nav-text">属性</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllibk库"><span class="nav-number">1.</span> <span class="nav-text">¶urllibk库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#request模块"><span class="nav-number">1.1.</span> <span class="nav-text">¶request模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#urlopen"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶urlopen()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#request类"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶Request类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httpresponse"><span class="nav-number">1.2.</span> <span class="nav-text">¶HTTPResponse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#urlopen-返回类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">¶urlopen()返回类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">¶使用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">¶属性</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
