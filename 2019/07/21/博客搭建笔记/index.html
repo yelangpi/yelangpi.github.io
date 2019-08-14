@@ -398,6 +398,12 @@
 <h2 id="踩坑"><a class="header-anchor" href="#踩坑">¶</a>踩坑</h2>
 <p><code>bash: hexo: command not found</code> 解决方案：</p>
 <p>添加环境变量：C:\Users\lenovo\AppData\Roaming\npm\node_modules\hexo\bin</p>
+<h2 id="hexo-renderer-markdown-it-插件"><a class="header-anchor" href="#hexo-renderer-markdown-it-插件">¶</a>hexo-renderer-markdown-it 插件</h2>
+<p>为了更好地写markdown文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
+<p>添加到_config.yml文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Markdown-it config</span><br><span class="line">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span><br><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true</span><br><span class="line">    xhtmlOut: false</span><br><span class="line">    breaks: true</span><br><span class="line">    linkify: true</span><br><span class="line">    typographer: true</span><br><span class="line">    quotes: &apos;“”‘’&apos;</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-ins</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-emoji  # add emoji</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &apos;v&apos;</span><br><span class="line">    permalink: true</span><br><span class="line">    permalinkClass: header-anchor</span><br><span class="line">    permalinkSymbol: ¶</span><br></pre></td></tr></table></figure>
+<p>地址：<a href="https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration" target="_blank" rel="noopener">https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration</a></p>
 
       
     </div>
@@ -519,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -602,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">¶环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo基本操作"><span class="nav-number">2.</span> <span class="nav-text">¶Hexo基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他配置"><span class="nav-number">3.</span> <span class="nav-text">¶其他配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图片"><span class="nav-number">4.</span> <span class="nav-text">¶添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#踩坑"><span class="nav-number">5.</span> <span class="nav-text">¶踩坑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">¶环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo基本操作"><span class="nav-number">2.</span> <span class="nav-text">¶Hexo基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他配置"><span class="nav-number">3.</span> <span class="nav-text">¶其他配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图片"><span class="nav-number">4.</span> <span class="nav-text">¶添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#踩坑"><span class="nav-number">5.</span> <span class="nav-text">¶踩坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-renderer-markdown-it-插件"><span class="nav-number">6.</span> <span class="nav-text">¶hexo-renderer-markdown-it 插件</span></a></li></ol></div>
             
 
           </div>
