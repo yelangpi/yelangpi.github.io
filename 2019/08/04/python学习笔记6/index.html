@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,笔记,">
+  <meta name="keywords" content="笔记,python,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="¶requests库 ¶文件上传 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) ¶cookies RequestsCookieJa">
-<meta name="keywords" content="python,笔记">
+<meta name="description" content="requests库# 文件上传# 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) cookies# RequestsCookieJa">
+<meta name="keywords" content="笔记,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记6">
 <meta property="og:url" content="http://yoursite.com/2019/08/04/python学习笔记6/index.html">
 <meta property="og:site_name" content="野狼匹的博客">
-<meta property="og:description" content="¶requests库 ¶文件上传 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) ¶cookies RequestsCookieJa">
+<meta property="og:description" content="requests库# 文件上传# 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) cookies# RequestsCookieJa">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-05T01:42:32.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记6">
-<meta name="twitter:description" content="¶requests库 ¶文件上传 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) ¶cookies RequestsCookieJa">
+<meta name="twitter:description" content="requests库# 文件上传# 在读取网页时加入参数files 123import requestsfiles = &amp;#123;&apos;file&apos;: open(&apos;filename&apos;, &apos;rb&apos;)&amp;#125;  # 只读方式打开，只写为wbr = requests.post(&apos;http://httpbin.org/post&apos;, files=files) cookies# RequestsCookieJa">
 
 
 
@@ -357,11 +357,11 @@
       
 
       
-        <h2 id="requests库"><a class="header-anchor" href="#requests库">¶</a>requests库</h2>
-<h3 id="文件上传"><a class="header-anchor" href="#文件上传">¶</a>文件上传</h3>
+        <h2><span id="prequests-ku">requests库</span><a href="#prequests-ku" class="header-anchor">#</a></h2>
+<h3><span id="pwen-jian-shang-chuan">文件上传</span><a href="#pwen-jian-shang-chuan" class="header-anchor">#</a></h3>
 <p>在读取网页时加入参数files</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">files = &#123;<span class="string">'file'</span>: open(<span class="string">'filename'</span>, <span class="string">'rb'</span>)&#125;  <span class="comment"># 只读方式打开，只写为wb</span></span><br><span class="line">r = requests.post(<span class="string">'http://httpbin.org/post'</span>, files=files)</span><br></pre></td></tr></table></figure>
-<h3 id="cookies"><a class="header-anchor" href="#cookies">¶</a>cookies</h3>
+<h3><span id="pcookies">cookies</span><a href="#pcookies" class="header-anchor">#</a></h3>
 <p>RequestsCookieJar类，可通过cookies.items()获取key和value</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r = requests.get(<span class="string">"https://github.com/"</span>)</span><br><span class="line">print(r.cookies)</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> r.cookies.items():</span><br><span class="line">    print(key+<span class="string">'='</span>+value)</span><br></pre></td></tr></table></figure>
 <p>自定义cookies可以放在headers里</p>
@@ -387,9 +387,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -574,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#requests库"><span class="nav-number">1.</span> <span class="nav-text">¶requests库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件上传"><span class="nav-number">1.1.</span> <span class="nav-text">¶文件上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookies"><span class="nav-number">1.2.</span> <span class="nav-text">¶cookies</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">requests库#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">文件上传#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">cookies#</span></a></li></ol></li></ol></div>
             
 
           </div>
