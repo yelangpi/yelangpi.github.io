@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="urllib库# request模块# BaseHandler类# Handler的父类，基本函数有default_open(),protocol_request() Hander子类# HTTPDefaultErrorHandler# 用于处理HTTP响应错误 HTTPRedirectHandler# 用于处理重定向 HTTPCookieProcessor# 用于处理cookies: 字典处理#">
+<meta name="description" content="urllib库 request模块 BaseHandler类 Handler的父类，基本函数有default_open(),protocol_request() Hander子类 HTTPDefaultErrorHandler 用于处理HTTP响应错误 HTTPRedirectHandler 用于处理重定向 HTTPCookieProcessor 用于处理cookies: 字典处理 使用http.">
 <meta name="keywords" content="笔记,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记3">
 <meta property="og:url" content="http://yoursite.com/2019/08/01/python学习笔记3/index.html">
 <meta property="og:site_name" content="野狼匹的博客">
-<meta property="og:description" content="urllib库# request模块# BaseHandler类# Handler的父类，基本函数有default_open(),protocol_request() Hander子类# HTTPDefaultErrorHandler# 用于处理HTTP响应错误 HTTPRedirectHandler# 用于处理重定向 HTTPCookieProcessor# 用于处理cookies: 字典处理#">
+<meta property="og:description" content="urllib库 request模块 BaseHandler类 Handler的父类，基本函数有default_open(),protocol_request() Hander子类 HTTPDefaultErrorHandler 用于处理HTTP响应错误 HTTPRedirectHandler 用于处理重定向 HTTPCookieProcessor 用于处理cookies: 字典处理 使用http.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-01T06:23:38.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记3">
-<meta name="twitter:description" content="urllib库# request模块# BaseHandler类# Handler的父类，基本函数有default_open(),protocol_request() Hander子类# HTTPDefaultErrorHandler# 用于处理HTTP响应错误 HTTPRedirectHandler# 用于处理重定向 HTTPCookieProcessor# 用于处理cookies: 字典处理#">
+<meta name="twitter:description" content="urllib库 request模块 BaseHandler类 Handler的父类，基本函数有default_open(),protocol_request() Hander子类 HTTPDefaultErrorHandler 用于处理HTTP响应错误 HTTPRedirectHandler 用于处理重定向 HTTPCookieProcessor 用于处理cookies: 字典处理 使用http.">
 
 
 
@@ -357,38 +357,38 @@
       
 
       
-        <h2><span id="purllib-ku">urllib库</span><a href="#purllib-ku" class="header-anchor">#</a></h2>
-<h3><span id="prequest-mo-kuai">request模块</span><a href="#prequest-mo-kuai" class="header-anchor">#</a></h3>
-<h4><span id="pbasehandler-lei">BaseHandler类</span><a href="#pbasehandler-lei" class="header-anchor">#</a></h4>
+        <h2><span id="urllib库">urllib库</span></h2>
+<h3><span id="request模块">request模块</span></h3>
+<h4><span id="basehandler类">BaseHandler类</span></h4>
 <p>Handler的父类，基本函数有default_open(),protocol_request()</p>
-<h4><span id="phander-zi-lei">Hander子类</span><a href="#phander-zi-lei" class="header-anchor">#</a></h4>
-<h5><span id="phttpdefaulterrorhandler">HTTPDefaultErrorHandler</span><a href="#phttpdefaulterrorhandler" class="header-anchor">#</a></h5>
+<h4><span id="hander子类">Hander子类</span></h4>
+<h5><span id="httpdefaulterrorhandler">HTTPDefaultErrorHandler</span></h5>
 <p>用于处理HTTP响应错误</p>
-<h5><span id="phttpredirecthandler">HTTPRedirectHandler</span><a href="#phttpredirecthandler" class="header-anchor">#</a></h5>
+<h5><span id="httpredirecthandler">HTTPRedirectHandler</span></h5>
 <p>用于处理重定向</p>
-<h5><span id="phttpcookieprocessor">HTTPCookieProcessor</span><a href="#phttpcookieprocessor" class="header-anchor">#</a></h5>
+<h5><span id="httpcookieprocessor">HTTPCookieProcessor</span></h5>
 <p>用于处理cookies:</p>
-<h6><span id="pzi-dian-chu-li">字典处理</span><a href="#pzi-dian-chu-li" class="header-anchor">#</a></h6>
+<h6><span id="字典处理">字典处理</span></h6>
 <p>使用http.cookiejar.CookieJar()创建cookie</p>
 <p>使用HTTPCookieProcessor创建handle并传入cookie</p>
 <p>build_opener()创建opener并open()</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">cookie = http.cookiejar.CookieJar()</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">    print(item.name+<span class="string">'='</span>+item.value)</span><br></pre></td></tr></table></figure>
-<h6><span id="pbao-cun-cookie">保存cookie</span><a href="#pbao-cun-cookie" class="header-anchor">#</a></h6>
+<h6><span id="保存cookie">保存cookie</span></h6>
 <p>使用MozillaCookieJar(filename)或LWPCookieJar(filename)创建cookie</p>
 <p>使用cookie.save(ignore_expires=True, ignore_discard=True)保存文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">filename = <span class="string">'cookies.txt'</span></span><br><span class="line">cookie = http.cookiejar.MozillaCookieJar(filename)</span><br><span class="line"><span class="comment"># Mozilla格式或LWP格式</span></span><br><span class="line"><span class="comment"># cookie = http.cookiejar.LWPCookieJar(filename)</span></span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line">cookie.save(ignore_expires=<span class="literal">True</span>, ignore_discard=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<h6><span id="pdu-qu-cookie">读取cookie</span><a href="#pdu-qu-cookie" class="header-anchor">#</a></h6>
+<h6><span id="读取cookie">读取cookie</span></h6>
 <p>使用cookie.load(filename, ignore_discard=True, ignore_expires=True)读取cookie文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">filename = <span class="string">'cookies.txt'</span></span><br><span class="line">cookie = http.cookiejar.MozillaCookieJar()</span><br><span class="line"><span class="comment"># Mozilla格式或LWP格式</span></span><br><span class="line"><span class="comment"># cookie = http.cookiejar.LWPCookieJar()</span></span><br><span class="line">cookie.load(filename, ignore_discard=<span class="literal">True</span>, ignore_expires=<span class="literal">True</span>)</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com/'</span>)</span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
-<h5><span id="pproxyhandler">ProxyHandler</span><a href="#pproxyhandler" class="header-anchor">#</a></h5>
+<h5><span id="proxyhandler">ProxyHandler</span></h5>
 <p>设置代理</p>
 <p>使用ProxyHandler，传入参数为字典</p>
 <p>使用build_opener(handler)构建opener</p>
 <p>使用open()函数打开</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> ProxyHandler, build_opener</span><br><span class="line">proxy_handler = ProxyHandler(&#123;</span><br><span class="line">    <span class="string">'http'</span>: <span class="string">'http://127.0.0.1:8080'</span>,</span><br><span class="line">    <span class="string">'https'</span>: <span class="string">'https://127.0.0.1:8080'</span></span><br><span class="line">&#125;</span><br><span class="line">)  <span class="comment"># 地址自己设置</span></span><br><span class="line">opener = build_opener(proxy_handler)</span><br><span class="line">response = opener.open(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line">print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
-<h5><span id="phttppasswordmgr">HTTPPasswordMgr</span><a href="#phttppasswordmgr" class="header-anchor">#</a></h5>
+<h5><span id="httppasswordmgr">HTTPPasswordMgr</span></h5>
 <p>用于管理密码</p>
-<h5><span id="phttpbasicauthhandler">HTTPBasicAuthHandler</span><a href="#phttpbasicauthhandler" class="header-anchor">#</a></h5>
+<h5><span id="httpbasicauthhandler">HTTPBasicAuthHandler</span></h5>
 <p>用于管理认证:</p>
 <p>构建HTTPPasswordMgrWithDefaultRealm对象p</p>
 <p>使用add_password加入账号密码和url</p>
@@ -396,11 +396,11 @@
 <p>使用build_opener创建opener对象</p>
 <p>使用open()函数打开</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, build_opener</span><br><span class="line">username = <span class="string">'username'</span></span><br><span class="line">password = <span class="string">'password'</span></span><br><span class="line">url = <span class="string">'http://www.baidu.com/'</span>   <span class="comment"># 使用需要身份验证的页面</span></span><br><span class="line">p = HTTPPasswordMgrWithDefaultRealm()</span><br><span class="line">p.add_password(<span class="literal">None</span>, url, username, password)</span><br><span class="line">handler = HTTPBasicAuthHandler(p)</span><br><span class="line">opener = build_opener(handler)</span><br><span class="line">result = opener.open(url)</span><br></pre></td></tr></table></figure>
-<h3><span id="perror-mo-kuai">error模块</span><a href="#perror-mo-kuai" class="header-anchor">#</a></h3>
-<h4><span id="purlerror-lei">URLError类</span><a href="#purlerror-lei" class="header-anchor">#</a></h4>
+<h3><span id="error模块">error模块</span></h3>
+<h4><span id="urlerror类">URLError类</span></h4>
 <p>继承自OSError类，是error模块的基类</p>
 <p>具有reason属性表示异常内容</p>
-<h4><span id="phttperror-lei">HTTPError类</span><a href="#phttperror-lei" class="header-anchor">#</a></h4>
+<h4><span id="httperror类">HTTPError类</span></h4>
 <p>URLError的子类，专门用来处理HTTP请求错误</p>
 <p>属性:</p>
 <ul>
@@ -410,7 +410,7 @@
 </ul>
 <p>例如:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request, error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = request.urlopen(<span class="string">'https://yelangpi.github.io/index.htm'</span>)  <span class="comment"># 不存在的网站</span></span><br><span class="line"><span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason, e.code, e.headers, sep=<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
-<h4><span id="pzhu-yi">注意</span><a href="#pzhu-yi" class="header-anchor">#</a></h4>
+<h4><span id="注意">注意</span></h4>
 <p>reason属性可能是一个对象而不是字符串，例如socket.timeout类</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = urllib.request.urlopen(<span class="string">'https://www.baidu.com'</span>, timeout=<span class="number">0.01</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(type(e.reason))</span><br><span class="line">    <span class="keyword">if</span> isinstance(e.reason, socket.timeout):</span><br><span class="line">        print(<span class="string">'TIME OUT'</span>)</span><br></pre></td></tr></table></figure>
 
@@ -617,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">urllib库#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">request模块#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.1.</span> <span class="nav-text">BaseHandler类#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.</span> <span class="nav-text">Hander子类#</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">HTTPDefaultErrorHandler#</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">HTTPRedirectHandler#</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">HTTPCookieProcessor#</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.1.</span> <span class="nav-text">字典处理#</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.2.</span> <span class="nav-text">保存cookie#</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.3.</span> <span class="nav-text">读取cookie#</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">ProxyHandler#</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">HTTPPasswordMgr#</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">HTTPBasicAuthHandler#</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">error模块#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.1.</span> <span class="nav-text">URLError类#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.2.</span> <span class="nav-text">HTTPError类#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意#</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">urllib库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">request模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.1.</span> <span class="nav-text">BaseHandler类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.</span> <span class="nav-text">Hander子类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">HTTPDefaultErrorHandler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">HTTPRedirectHandler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">HTTPCookieProcessor</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.1.</span> <span class="nav-text">字典处理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.2.</span> <span class="nav-text">保存cookie</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.3.3.</span> <span class="nav-text">读取cookie</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">ProxyHandler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">HTTPPasswordMgr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">HTTPBasicAuthHandler</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">error模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.1.</span> <span class="nav-text">URLError类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.2.</span> <span class="nav-text">HTTPError类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
